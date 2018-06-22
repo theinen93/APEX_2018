@@ -1,5 +1,8 @@
-﻿using System;
+﻿using AdageTracker.JIRA.Implementations.Objects;
+//using QuickType;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -14,7 +17,46 @@ namespace AdageTracker.Web.APIControllers
         [Route("test")]
         public IHttpActionResult Test([FromBody] object JiraData)
         {
+            try
+            {
+                var url = "https://adagetechnologies.atlassian.net/browse/{0}";
+                var client = new AdageTracker.JIRA.Implementations.JIRAClientFactory().GetJiraClient();
+                using (StreamWriter _testData = new StreamWriter("C:/Working/Adage_Tracker/data.txt", true))
+                {
+                    _testData.WriteLine(JiraData);
+                }
+                var data = JIRAWebHookObject.FromJson(JiraData.ToString());
+                var issue = client.Issues.GetIssueAsync(data.Issue.Key).Result;
+                var changeLog = client.Issues.GetChangeLogsAsync(data.Issue.Key).Result;
+
+                if (changeLog.OrderByDescending(c => c.CreatedDate).FirstOrDefault().Items.Any(i => i.FromValue == "Ready for Adage QA" && i.ToValue == "In Progress"))
+                {
+                    var slackClient = new AdageTracker.Slack.Implementations.Factories.SlackClientFactory();
+
+                    slackClient.PostMessageToAdageTracker(string.Format("Ticket {0}, failed QA: {1}", data.Issue.Key, string.Format(url, data.Issue.Key)), "FAIL BOT");
+                }
+
+                else if (changeLog.OrderByDescending(c => c.CreatedDate).FirstOrDefault().Items.Any(i => i.FromValue == "Ready for Client UAT" && i.ToValue == "In Progress"))
+                {
+                    var slackClient = new AdageTracker.Slack.Implementations.Factories.SlackClientFactory();
+
+                    slackClient.PostMessageToAdageTracker(string.Format("Ticket {0}, failed UAT: {1}", data.Issue.Key, string.Format(url, data.Issue.Key)), "FAIL BOT");
+                }
+            }
+
+            catch (Exception ex)
+            {
+                using (StreamWriter _testData = new StreamWriter("C:/Working/Adage_Tracker/data.txt", true))
+                {
+                    _testData.WriteLine(ex.Message); // Write the file.
+                }
+            }
+
             return Ok("Success");
         }
     }
+
+
 }
+
+

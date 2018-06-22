@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementations\Factories\JIRAClientFactory.cs" />
+    <Compile Include="Implementations\Objects\JIRAWebHookObject.cs" />
     <Compile Include="Implementations\Repositories\JIRARepository.cs" />
     <Compile Include="Interfaces\IJIRAClientFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
