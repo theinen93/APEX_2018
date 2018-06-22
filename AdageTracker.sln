@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdageTracker.Web", "AdageTracker.Web\AdageTracker.Web.csproj", "{845E768D-849F-42F4-9826-0BFFA2A6E71A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdageTracker.JIRA", "AdageTracker.JIRA\AdageTracker.JIRA.csproj", "{20D7E28A-EF9D-4EEF-B7AA-EA7A7B6CF7B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{845E768D-849F-42F4-9826-0BFFA2A6E71A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{845E768D-849F-42F4-9826-0BFFA2A6E71A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{845E768D-849F-42F4-9826-0BFFA2A6E71A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20D7E28A-EF9D-4EEF-B7AA-EA7A7B6CF7B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20D7E28A-EF9D-4EEF-B7AA-EA7A7B6CF7B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20D7E28A-EF9D-4EEF-B7AA-EA7A7B6CF7B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20D7E28A-EF9D-4EEF-B7AA-EA7A7B6CF7B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
