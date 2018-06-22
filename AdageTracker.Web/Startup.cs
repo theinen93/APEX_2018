@@ -19,6 +19,10 @@ namespace AdageTracker.Web
             //var user = new AdageTracker.JIRA.Implement\ations.JIRAClientFactory().GetJiraClient().Users.GetUserAsync("adageuser").Result;
             //var user = new AdageTracker.JIRA.Implementations.JIRAClientFactory().GetJiraClient().Eve
             ConfigureAuth(app);
+
+
+            var test = new AdageTracker.Slack.Implementations.Factories.SlackClientFactory();
+            test.AuthenticateSlack();
         }
     }
 }

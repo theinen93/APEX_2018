@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AdageTracker.Slack.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SLACK_PASSWORD" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Baseball3!3!</Value>
+    </Setting>
+    <Setting Name="SLACK_USERNAME" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mmyers@adagetechnologies.com</Value>
+    </Setting>
+    <Setting Name="SLACK_CLIENT_ID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3311335400.369203670118</Value>
+    </Setting>
+    <Setting Name="SLACK_CLIENT_SECRET" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">9829279041caa6a2fa14af289dc18184</Value>
+    </Setting>
+    <Setting Name="SLACK_APP_ID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AAV5ZKQ3G</Value>
+    </Setting>
+    <Setting Name="SLACK_VERIFICATION_TOKEN" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">uT8VJeUstUxBHbB03jJzdyca</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
