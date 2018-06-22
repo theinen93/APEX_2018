@@ -18,8 +18,6 @@ namespace AdageTracker.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            //GlobalConfiguration.Configure(Register);
-            ////AdageTracker.Web.Configs.WebApiConfig.Register(RouteTable.Routes);
             GlobalConfiguration.Configure(config =>
             {
                 config.MapHttpAttributeRoutes();
@@ -30,19 +28,6 @@ namespace AdageTracker.Web
                     defaults: new { id = System.Web.Http.RouteParameter.Optional }
                 );
             });
-        }
-
-        public static void Register(HttpConfiguration config)
-        {
-            // Web API configuration and services
-
-            // Web API routes
-
-            config.Routes.MapHttpRoute(
-                name: "ActionApi",
-                routeTemplate: "api/{controller}/{action}/{id}",
-                defaults: new { id = System.Web.Http.RouteParameter.Optional }
-            );
         }
     }
 }
