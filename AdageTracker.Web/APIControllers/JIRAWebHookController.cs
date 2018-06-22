@@ -12,9 +12,8 @@ namespace AdageTracker.Web.APIControllers
         [AcceptVerbs("GET", "POST")]
         [HttpPost]
         [Route("test")]
-        public IHttpActionResult Test()
+        public IHttpActionResult Test([FromBody] object JiraData)
         {
-
             return Ok("Success");
         }
     }
