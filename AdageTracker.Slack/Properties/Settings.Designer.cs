@@ -76,5 +76,14 @@ namespace AdageTracker.Slack.Properties {
                 return ((string)(this["SLACK_VERIFICATION_TOKEN"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:50788/")]
+        public string SLACK_REDIRECT_URL {
+            get {
+                return ((string)(this["SLACK_REDIRECT_URL"]));
+            }
+        }
     }
 }

@@ -21,8 +21,8 @@ namespace AdageTracker.Web
             ConfigureAuth(app);
 
 
-            var test = new AdageTracker.Slack.Implementations.Factories.SlackClientFactory();
-            test.AuthenticateSlack();
+            var test = new Slack.Implementations.Factories.SlackClientFactory();
+            test.PostMessageToAdageTracker("testing again", "New Guy");
         }
     }
 }

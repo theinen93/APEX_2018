@@ -20,5 +20,8 @@
     <Setting Name="SLACK_VERIFICATION_TOKEN" Type="System.String" Scope="Application">
       <Value Profile="(Default)">uT8VJeUstUxBHbB03jJzdyca</Value>
     </Setting>
+    <Setting Name="SLACK_REDIRECT_URL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:50788/</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

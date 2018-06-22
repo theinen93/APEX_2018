@@ -12,14 +12,21 @@ namespace AdageTracker.Slack.Implementations.Factories
 {
     public class SlackClientFactory
     {
-        private string authToken;
+        const string AUTH_TOKEN = "xoxp-3311335400-198618643633-385993138033-69baa2cec72638e37174844d2d12fd39";
         private SlackClient slackClient;
-        public void AuthenticateSlack()
+        public SlackClientFactory()
         {
-            authToken = "xoxp-3311335400-198618643633-385993138033-69baa2cec72638e37174844d2d12fd39";
+            slackClient = new SlackClient(AUTH_TOKEN);
+        }
 
-            slackClient = new SlackClient(authToken);
-            slackClient.PostMessage(null, "#adage-tracker", "Letsssss goooooooo", "Jo the Robot");
+        public void PostMessageToAdageTracker(string text, string botName)
+        {
+            slackClient.PostMessage(null, "#adage-tracker", text, botName);
+        }
+
+        public void PostMessage(string channel, string text, string botName)
+        {
+            slackClient.PostMessage(null, channel, text, botName);
         }
     }
 }
