@@ -36,7 +36,7 @@ namespace AdageTracker.Web.Controllers
             issue.WorkflowTransitionAsync(actions.FirstOrDefault().Name).ConfigureAwait(false);
             issue.SaveChanges();
             var test = new AdageTracker.Slack.Implementations.Factories.SlackClientFactory();
-            test.AuthenticateSlack();
+            test.PostMessageToAdageTracker(string.Format("Moved Issue: {0} to {1}", issue.Key.Value, issue.Status.Name), "New Bot");
             return RedirectToAction("Index");
         }
     }
