@@ -17,6 +17,10 @@ namespace AdageTracker.Web
             var prior = new AdageTracker.JIRA.Implementations.JIRAClientFactory().GetJiraClient().Priorities.GetPrioritiesAsync().Result;
             //var test = new AdageTracker.JIRA.Implementations.JIRAClientFactory().GetJiraClient().RestClient.RestSharpClient.
             ConfigureAuth(app);
+
+
+            var test = new AdageTracker.Slack.Implementations.Factories.SlackClientFactory();
+            test.AuthenticateSlack();
         }
     }
 }
