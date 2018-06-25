@@ -26,5 +26,18 @@ namespace AdageTracker.Web.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Submit()
+        {
+            var client = new AdageTracker.JIRA.Implementations.JIRAClientFactory().GetJiraClient();
+            var issue = client.Issues.GetIssueAsync("ATR-73").Result;
+            var actions = client.Issues.GetActionsAsync("ATR-73").Result;
+            issue.WorkflowTransitionAsync(actions.FirstOrDefault().Name).ConfigureAwait(false);
+            issue.SaveChanges();
+            var test = new AdageTracker.Slack.Implementations.Factories.SlackClientFactory();
+            test.PostMessageToAdageTracker(string.Format("Moved Issue: {0} to {1}", issue.Key.Value, issue.Status.Name), "New Bot");
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -18,6 +18,12 @@ namespace AdageTracker.Web
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            //routes.MapRoute(
+            //    name: "ActionApi",
+            //    url: "api/{controller}/{action}/{id}",
+            //    defaults: new { id = System.Web.Http.RouteParameter.Optional }
+            //);
         }
     }
 }
