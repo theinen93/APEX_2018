@@ -12,7 +12,7 @@ namespace AdageTracker.JIRA.Implementations
     {
         public Jira GetJiraClient()
         {
-            return Jira.CreateRestClient("https://adagetechnologies.atlassian.net", "theinen@adagetechnologies.com", "football24");
+            return Jira.CreateRestClient("https://adagetechnologies.atlassian.net", "fake", "password");
         }
     }
 }

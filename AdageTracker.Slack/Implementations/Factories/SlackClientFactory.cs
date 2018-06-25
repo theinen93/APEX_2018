@@ -12,7 +12,7 @@ namespace AdageTracker.Slack.Implementations.Factories
 {
     public class SlackClientFactory
     {
-        const string AUTH_TOKEN = "xoxp-3311335400-198618643633-385993138033-69baa2cec72638e37174844d2d12fd39";
+        const string AUTH_TOKEN = "fake";
         private SlackClient slackClient;
         public SlackClientFactory()
         {
